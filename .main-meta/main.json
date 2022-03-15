@@ -4,9 +4,9 @@
     "content": {
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.pic16f15244-cnano-bipolar-hall-sensor-interface-mplab-mcc",
-        "version": " ",
-        "displayName": "",
-        "projectName": "pic16f15244-cnano-bipolar-hall-sensor-interface-mplab-mcc",
+        "version": "1.0.0",
+        "displayName": "Interfacing Bipolar Hall Sensor to PIC16F15244 Microcontroller",
+        "projectName": "pic16f15244-ccp-bipolar-hall-sensor-interface-mplab-mcc",
         "shortDescription": "This code example demonstrates how to interface a bipolar hall sensor to PIC microcontroller through built in CCP peripheral Compatible PIC16F152xx family of MCUs are PIC16F15214 PIC16F15223 PIC16F15254 PIC16F15276",
         "ide": {
             "name": "MPLAB X",
@@ -19,12 +19,12 @@
             }
         ],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "PIC16F1xxxx_DFP",
+            "semverRange": "^1.9.163"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": ">=5.1.1"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -37,8 +37,8 @@
             }
         },
         "author": "Usha G",
-        "peripherals": [],
-        "keywords": [],
+        "peripherals": ["UART","TMR","CCP","PWM"],
+        "keywords": ["Data Visualizer","Hall Effect Sensor","Motor Control","Speed","Wheel"],
         "additionalData": {
             "longDescription": {
                 "metaDataVersion": "1.0.0",
