@@ -13,8 +13,8 @@ This code example demonstrates usage of Capture/Compare/PWM (CCP), Timer, Enhanc
 
 ## Related Documentation
 
-- [PIC16F15244 Product Family Page](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/8-bit-mcus/pic-mcus/pic16f15244)
-- [PIC16F15244 Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=pic16f15244&type=&language=&sort=) 
+- [PIC16F152xx Product Family Page](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/8-bit-mcus/pic-mcus/pic16f15244)
+- [PIC16F152xx Family Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=pic16f15244&type=&language=&sort=) 
 - [PIC16F15244 MCU Family Video](https://www.youtube.com/watch?v=nHLv3Th-o-s)
 - [PIC16F15244 MCU Product Page](https://www.microchip.com/en-us/product/PIC16F15244)
 
@@ -32,17 +32,18 @@ A piece of magnet is sticked on the wheel and Bi Hall click is placed near it, i
 
 ## Software Used
 
-- [MPLAB® X IDE 6.0.0 or newer](http://www.microchip.com/mplab/mplab-x-ide)
-- [MPLAB® XC8 2.35.0 or a newer compiler](http://www.microchip.com/mplab/compilers)
-- [MPLAB® Code Configurator (MCC) 5.0.3 or newer](https://www.microchip.com/mplab/mplab-code-configurator)
+- MPLAB® X IDE [6.0.0 or newer](http://www.microchip.com/mplab/mplab-x-ide)
+- MPLAB® XC8 [2.36.0 or newer](http://www.microchip.com/mplab/compilers)
+- MPLAB® Code Configurator (MCC) [5.0.3 or newer](https://www.microchip.com/mplab/mplab-code-configurator)
+- Microchip PIC16F1xxxx Series Device Support [1.9.163 or newer](https://packs.download.microchip.com/) 
+- Standalone Data Visualizer [2.20.674 or newer](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/atmel-data-visualizer)
 - MCC Melody Core 2.1.9
 - CCP MCC Melody driver 4.0.7
 - TMR0 MCC Melody driver 4.0.8
 - TMR1 MCC Melody driver 4.3.2
 - TMR2 MCC Melody driver 4.0.10
 - UART MCC Melody driver 1.6.0
-- [Microchip PIC16F1xxxx Series Device Support (1.9.163) or newer](https://packs.download.microchip.com/) 
-- [Standalone Data Visualizer 2.20.674 or newer](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/atmel-data-visualizer)
+
 
 **Note:** 
 
