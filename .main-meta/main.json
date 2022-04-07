@@ -7,7 +7,7 @@
         "version": "1.0.0",
         "displayName": "Interfacing Bipolar Hall Sensor to PIC16F15244 Microcontroller",
         "projectName": "pic16f15244-cnano-bipolar-hall-sensor-interface-mplab-mcc",
-        "shortDescription": "This code example demonstrates how to interface a bipolar hall sensor to PIC microcontroller through built in CCP peripheral Compatible PIC16F152xx family of MCUs are PIC16F15214 PIC16F15223 PIC16F15254 PIC16F15276",
+        "shortDescription": "This code example demonstrates how to interface a bipolar hall sensor to PIC microcontroller through built-in CCP peripheral. Compatible PIC16F152xx family of MCUs are PIC16F15214, PIC16F15223, PIC16F15254, PIC16F15276.",
         "ide": {
             "name": "MPLAB X",
             "semverRange": ">=6.0.0"
