@@ -12,7 +12,7 @@
 */
 
 /*
-© [2022] Microchip Technology Inc. and its subsidiaries.
+© [2023] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -34,8 +34,8 @@
 
 #include "../pins.h"
 
-void (*RB4_InterruptHandler)(void);
-void (*RC2_InterruptHandler)(void);
+void (*IO_RB4_InterruptHandler)(void);
+void (*Switch_InterruptHandler)(void);
 
 void PIN_MANAGER_Initialize(void)
 {
@@ -67,11 +67,6 @@ void PIN_MANAGER_Initialize(void)
     WPUB = 0x0;
     WPUC = 0x4;
   
-
-    /**
-    APFCONx registers
-    */
-
     /**
     ODx registers
     */
@@ -95,11 +90,16 @@ void PIN_MANAGER_Initialize(void)
     /**
     PPS registers
     */
-    CCP1PPS = 0xC; //RB4->CCP1:CCP1;
     RX1PPS = 0x11; //RC1->EUSART1:RX1;
+    RB6PPS = 0x09;  //RB6->TMR0:TMR0;
     RC3PPS = 0x03;  //RC3->PWM3:PWM3OUT;
     RC0PPS = 0x05;  //RC0->EUSART1:TX1;
-    RB6PPS = 0x09;  //RB6->TMR0:TMR0;
+    CCP1PPS = 0xC;  //RB4->CCP1:CCP1;
+    RB4PPS = 0x01;  //RB4->CCP1:CCP1;
+
+    /**
+    APFCON registers
+    */
 
    /**
     IOCx registers 
@@ -114,8 +114,8 @@ void PIN_MANAGER_Initialize(void)
     IOCCN = 0x0;
     IOCCF = 0x0;
 
-    RB4_SetInterruptHandler(RB4_DefaultInterruptHandler);
-    RC2_SetInterruptHandler(RC2_DefaultInterruptHandler);
+    IO_RB4_SetInterruptHandler(IO_RB4_DefaultInterruptHandler);
+    Switch_SetInterruptHandler(Switch_DefaultInterruptHandler);
 
     // Enable PIE0bits.IOCIE interrupt 
     PIE0bits.IOCIE = 1; 
@@ -123,29 +123,29 @@ void PIN_MANAGER_Initialize(void)
   
 void PIN_MANAGER_IOC(void)
 {
-    // interrupt on change for pin RB4}
+    // interrupt on change for pin IO_RB4}
     if(IOCBFbits.IOCBF4 == 1)
     {
-        RB4_ISR();  
+        IO_RB4_ISR();  
     }
-    // interrupt on change for pin RC2}
+    // interrupt on change for pin Switch}
     if(IOCCFbits.IOCCF2 == 1)
     {
-        RC2_ISR();  
+        Switch_ISR();  
     }
 }
    
 /**
-   RB4 Interrupt Service Routine
+   IO_RB4 Interrupt Service Routine
 */
-void RB4_ISR(void) {
+void IO_RB4_ISR(void) {
 
     // Add custom IOCBF4 code
 
     // Call the interrupt handler for the callback registered at runtime
-    if(RB4_InterruptHandler)
+    if(IO_RB4_InterruptHandler)
     {
-        RB4_InterruptHandler();
+        IO_RB4_InterruptHandler();
     }
     IOCBFbits.IOCBF4 = 0;
 }
@@ -153,29 +153,29 @@ void RB4_ISR(void) {
 /**
   Allows selecting an interrupt handler for IOCBF4 at application runtime
 */
-void RB4_SetInterruptHandler(void (* InterruptHandler)(void)){
-    RB4_InterruptHandler = InterruptHandler;
+void IO_RB4_SetInterruptHandler(void (* InterruptHandler)(void)){
+    IO_RB4_InterruptHandler = InterruptHandler;
 }
 
 /**
   Default interrupt handler for IOCBF4
 */
-void RB4_DefaultInterruptHandler(void){
-    // add your RB4 interrupt custom code
-    // or set custom function using RB4_SetInterruptHandler()
+void IO_RB4_DefaultInterruptHandler(void){
+    // add your IO_RB4 interrupt custom code
+    // or set custom function using IO_RB4_SetInterruptHandler()
 }
    
 /**
-   RC2 Interrupt Service Routine
+   Switch Interrupt Service Routine
 */
-void RC2_ISR(void) {
+void Switch_ISR(void) {
 
     // Add custom IOCCF2 code
 
     // Call the interrupt handler for the callback registered at runtime
-    if(RC2_InterruptHandler)
+    if(Switch_InterruptHandler)
     {
-        RC2_InterruptHandler();
+        Switch_InterruptHandler();
     }
     IOCCFbits.IOCCF2 = 0;
 }
@@ -183,16 +183,16 @@ void RC2_ISR(void) {
 /**
   Allows selecting an interrupt handler for IOCCF2 at application runtime
 */
-void RC2_SetInterruptHandler(void (* InterruptHandler)(void)){
-    RC2_InterruptHandler = InterruptHandler;
+void Switch_SetInterruptHandler(void (* InterruptHandler)(void)){
+    Switch_InterruptHandler = InterruptHandler;
 }
 
 /**
   Default interrupt handler for IOCCF2
 */
-void RC2_DefaultInterruptHandler(void){
-    // add your RC2 interrupt custom code
-    // or set custom function using RC2_SetInterruptHandler()
+void Switch_DefaultInterruptHandler(void){
+    // add your Switch interrupt custom code
+    // or set custom function using Switch_SetInterruptHandler()
 }
 /**
  End of File

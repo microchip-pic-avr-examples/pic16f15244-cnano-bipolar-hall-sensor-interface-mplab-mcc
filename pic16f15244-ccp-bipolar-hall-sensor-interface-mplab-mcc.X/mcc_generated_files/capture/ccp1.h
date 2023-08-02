@@ -1,26 +1,16 @@
 /**
-  CCP1 Generated Driver File
-
-  @Company
-    Microchip Technology Inc.
-
-  @File Name
-    ccp1.h
-
-  @Summary
-    This is the generated driver implementation file for the CCP1 driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
-
-  @Description
-    This header file provides implementations for driver APIs for CCP1.
-    Generation Information :
-        Driver Version    :  2.01
-    The generated drivers are tested against the following:
-        Compiler          :  XC8 v2.20 and above
-        MPLAB             :  MPLABX v5.40
+ * CCP1 Generated Driver API Header File.
+ * 
+ * @file ccp1.h
+ * 
+ * @defgroup capture1 CAPTURE1
+ * 
+ * @brief This file contains the API prototypes and other data types for the CCP1 module.
+ *
+ * @version CCP1 Driver Version 2.0.1
 */
-
 /*
-© [2022] Microchip Technology Inc. and its subsidiaries.
+© [2023] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -51,38 +41,25 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    extern "C" {
-
-#endif
-
 /** 
    Section: Data Type Definition
 */
 
 /**
- @Summary
-   Defines the values to convert from 16bit to two 8 bit and vice versa
-
- @Description
-   This routine used to get two 8 bit values from 16bit also
-   two 8 bit value are combine to get 16bit.
-
- Remarks:
-   None
+ * @ingroup capture1
+ * @union CCPR1_PERIOD_REG_T
+ * @brief Custom data type to hold the low byte, high byte, and 16-bit values of the period register.
  */
-
 typedef union CCPR1Reg_tag
 {
    struct
    {
-      uint8_t ccpr1l;
-      uint8_t ccpr1h;
+      uint8_t ccpr1l; /**< CCPR1L low byte.*/
+      uint8_t ccpr1h; /**< CCPR1H high byte.*/
    };
    struct
    {
-      uint16_t ccpr1_16Bit;
+      uint16_t ccpr1_16Bit; /**< CCPR1 16-bit.*/
    };
 } CCPR1_PERIOD_REG_T ;
 
@@ -91,95 +68,29 @@ typedef union CCPR1Reg_tag
 */
 
 /**
-  @Summary
-    Initializes the CCP1
-
-  @Description
-    This routine initializes the CCP1.
-    This routine must be called before any other CCP1 routine is called.
-    This routine should only be called once during system initialization.
-
-  @Preconditions
-    None
-
-  @Param
-    None
-
-  @Returns
-    None
-
-  @Comment
-    
-
- @Example
-    <code>
-    CCP1_Initialize();
-    </code>
+ * @ingroup capture1
+ * @brief Initializes the CCP1 module. This is called only once before calling other CCP1 APIs.
+ * @param None.
+ * @return None.
  */
 void CCP1_Initialize(void);
 
 /**
-  @Summary
-    Implements ISR
-
-  @Description
-    This routine is used to implement the ISR for the interrupt-driven
-    implementations.
-
-  @Returns
-    None
-
-  @Param
-    None
-*/
+ * @ingroup capture1
+ * @brief Implements the Interrupt Service Routine (ISR) for the capture interrupt.
+ * @param None.
+ * @return None.
+ */
 void CCP1_CaptureISR(void);
 
 /**
-  @Summary
-    Setter for CCP1 CallBack function
-
-  @Description
-    Calling this function will set a new custom call back function that will be 
-    called from the Capture ISR.
-
-  @Preconditions
-    Initialize the CCP1 module with interrupt before calling this function.
-
-  @Param
-    A pointer to the new function
-
-  @Returns
-    None
-
-  @Example
-    <code>
-    void Capture_CallBack(uint16_t capturedValue)
-    {
-        // Custom callback routine
-    }
-    
-    void main(void)
-    {
-        // initialize the device
-        SYSTEM_Initialize();
-        
-        // set the custom callback
-        CCP1_SetCallBack(Capture_CallBack);
-        
-        while(1)
-        {
-            //Add your application code
-        }
-    }
-    </code>
-*/
+ * @ingroup capture1
+ * @brief Assigns a callback function that will be called from the Capture ISR when a capture interrupt event occurs.
+ * @param (*customCallBack)(uint16_t) - Function pointer to the new callback.
+ * @return None.
+ */
 void CCP1_SetCallBack(void (*customCallBack)(uint16_t));
 
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    }
-
-#endif
 
 #endif // CCP1_H
 /**

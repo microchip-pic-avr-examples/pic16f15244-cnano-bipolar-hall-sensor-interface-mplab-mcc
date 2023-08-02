@@ -4,18 +4,18 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>pic16f15244-ccp-bipolar-hall-sensor-interface-mplab-mcc</name>
-            <creation-uuid>dbe93e71-f45f-45a8-b94b-1f9407c70320</creation-uuid>
+            <creation-uuid>b1758948-0d0d-4706-946a-bbaed6a38662</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions>c</c-extensions>
-            <cpp-extensions/>
-            <header-extensions>h</header-extensions>
-            <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList/>
             <confList>
                 <confElem>
-                    <name>default</name>
+                    <name>pro</name>
+                    <type>2</type>
+                </confElem>
+                <confElem>
+                    <name>free</name>
                     <type>2</type>
                 </confElem>
             </confList>

@@ -1,26 +1,16 @@
 /**
-  CCP1 Generated Driver File
-
-  @Company
-    Microchip Technology Inc.
-
-  @File Name
-    ccp1.c
-
-  @Summary
-    This is the generated driver implementation file for the CCP1 driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
-
-  @Description
-    This source file provides implementations for driver APIs for CCP1.
-    Generation Information :
-        Driver Version    :  2.01
-    The generated drivers are tested against the following:
-        Compiler          :  XC8 v2.20 and above
-         MPLAB 	          :  MPLABX v5.40
+ * CCP1 Generated Driver File.
+ * 
+ * @file ccp1.c
+ * 
+ * @ingroup capture1
+ * 
+ * @brief This file contains the API implementation for the CCP1 driver.
+ *
+ * @version CCP1 Driver Version 2.0.1
 */
-
 /*
-© [2022] Microchip Technology Inc. and its subsidiaries.
+© [2023] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -53,11 +43,17 @@ static void (*CCP1_CallBack)(uint16_t);
   Section: Capture Module APIs
 */
 
+/**
+ * @ingroup capture1
+ * @brief Default callback function for the capture interrupt events.
+ * @param capturedValue - 16-bit captured value.
+ * @return static void.
+ */
 static void CCP1_DefaultCallBack(uint16_t capturedValue) {
     // Add your code here
 }
 
-void CCP1_Initialize(void) 
+void CCP1_Initialize(void)
 {
     // Set the CCP1 to the options selected in the User Interface
     
@@ -67,14 +63,16 @@ void CCP1_Initialize(void)
     // CTS CCP1 pin; 
     CCP1CAP = 0x0;
     
+    
     // CCPRH 0; 
     CCPR1H = 0x0;
     
     // CCPRL 0; 
     CCPR1L = 0x0;
-
+    
     // Set the default call back function for CCP1
     CCP1_SetCallBack(CCP1_DefaultCallBack);
+
 
     // Clear the CCP1 interrupt flag    
     PIR1bits.CCP1IF = 0;    
@@ -94,7 +92,7 @@ void CCP1_CaptureISR(void)
     module.ccpr1l = CCPR1L;
     module.ccpr1h = CCPR1H;
     
-    // Return 16bit captured value
+    // Return 16-bit captured value
     CCP1_CallBack(module.ccpr1_16Bit);
 }
 

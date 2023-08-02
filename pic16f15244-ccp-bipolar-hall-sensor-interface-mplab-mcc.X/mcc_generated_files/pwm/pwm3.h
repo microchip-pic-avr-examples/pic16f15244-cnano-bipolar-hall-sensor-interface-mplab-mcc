@@ -1,26 +1,17 @@
- /**
-   PWM3 Generated Driver API Header File
- 
-   @Company
-     Microchip Technology Inc. 
-
-   @File Name
-    pwm3.h
-
-   @Summary
-     This is the generated header file for the PWM3 driver.
- 
-   @Description
-     This header file provides APIs for the PWM3 driver.
-     Generation Information :
-         Driver Version    :  2.01
-     The generated drivers are tested against the following:
-         Compiler          :  XC8 v2.20
-         MPLAB             :  MPLABX v5.40
- */
+/**
+ * PWM3 Generated Driver API Header File
+ *
+ * @file pwm3.h
+ *
+ * @defgroup pwm3 PWM3
+ *
+ * @brief This file contains the API prototypes for the PWM3 driver.
+ *
+ * @version PWM3 Driver Version 2.0.3
+*/
 
 /*
-© [2022] Microchip Technology Inc. and its subsidiaries.
+© [2023] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -44,77 +35,32 @@
  #define PWM3_H
  
  /**
-   Section: Included Files
- */
+  * Section: Included Files
+  */
 
  #include <xc.h>
  #include <stdint.h>
 
  /**
-   Section: Macro Declarations
+  * Section: Macro Declarations
  */
 
  #define PWM3_INITIALIZE_DUTY_VALUE    0
 
- /**
-   Section: PWM Module APIs
+
+/**
+ * @ingroup pwm3
+ * @brief Initializes the PWM3 interface.
+ * @param None.
+ * @return None.
  */
-
- /**
-   @Summary
-     Initializes the PWM3
-
-   @Description
-     This routine initializes the PWM3_Initialize
-     This routine must be called before any other PWM3 routine is called.
-     This routine should only be called once during system initialization.
-
-   @Preconditions
-     None
-
-   @Param
-     None
-
-   @Returns
-     None
-
-   @Comment
-     
-
-  @Example
-     <code>
-     uint16_t dutycycle;
-
-     PWM3_Initialize();
-     PWM3_LoadDutyValue(dutycycle);
-     </code>
-  */
  void PWM3_Initialize(void);
 
  /**
-   @Summary
-     Loads 16-bit duty cycle.
-
-   @Description
-     This routine loads the 16 bit duty cycle value.
-
-   @Preconditions
-     PWM3_Initialize() function should have been called 
-         before calling this function.
-
-   @Param
-     Pass 16bit duty cycle value.
-
-   @Returns
-     None
-
-   @Example
-     <code>
-     uint16_t dutycycle;
-
-     PWM3_Initialize();
-     PWM3_LoadDutyValue(dutycycle);
-     </code>
+ * @ingroup pwm3
+ * @brief Loads the 16-bit duty cycle value.
+ * @param uint16_t dutyValue - PWM3 duty cycle value to be loaded.
+ * @return None.
  */
  void PWM3_LoadDutyValue(uint16_t dutyValue);
  

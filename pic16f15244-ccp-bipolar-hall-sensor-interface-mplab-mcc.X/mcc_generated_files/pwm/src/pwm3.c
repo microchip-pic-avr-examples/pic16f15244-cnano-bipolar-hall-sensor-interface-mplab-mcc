@@ -1,26 +1,17 @@
- /**
-   PWM3 Generated Driver File
- 
-   @Company
-     Microchip Technology Inc.
- 
-   @File Name
-     pwm3.c
- 
-   @Summary
-     This is the generated driver implementation file for the PWM3 driver.
- 
-   @Description
-     This source file provides APIs for driver for PWM3.
-     Generation Information :
-         Driver Version    :  2.01
-     The generated drivers are tested against the following:
-         Compiler          :  XC8 v2.20
-         MPLAB             :  MPLABX v5.40
- */ 
+/**
+  * PWM3 Generated Driver File
+  *
+  * @file pwm3.c
+  *
+  * @ingroup pwm3
+  *
+  * @brief This file contains the API implementations for the PWM3 module.
+  *
+  * @version PWM3 Driver Version 2.0.3
+*/
 
  /*
-© [2022] Microchip Technology Inc. and its subsidiaries.
+© [2023] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -41,27 +32,27 @@
 */
  
  /**
-   Section: Included Files
- */
+  * Section: Included Files
+  */
 
  #include <xc.h>
  #include "../pwm3.h"
 
  /**
-   Section: PWM Module APIs
- */
+  * Section: PWM Module APIs
+  */
 
  void PWM3_Initialize(void)
  {
     // Set the PWM to the options selected in the .
     // PWMPOL active_hi; PWMEN enabled; 
-    PWM3CON = 0x80;   
+    PWM3CON = 0x80;
 
     // PWMDCH 0; 
-    PWM3DCH = 0x0;   
+    PWM3DCH = 0x0;
 
     // PWMDCL 0; 
-    PWM3DCL = 0x0;   
+    PWM3DCL = 0x0;
 
  }
 

@@ -12,7 +12,7 @@
 */
 
 /*
-© [2022] Microchip Technology Inc. and its subsidiaries.
+© [2023] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -68,7 +68,6 @@
 #define LED_SetOpenDrain()       do { ODCONAbits.ODCA2 = 1; } while(0)
 #define LED_SetAnalogMode()      do { ANSELAbits.ANSA2 = 1; } while(0)
 #define LED_SetDigitalMode()     do { ANSELAbits.ANSA2 = 0; } while(0)
-
 // get/set IO_RB4 aliases
 #define IO_RB4_TRIS                 TRISBbits.TRISB4
 #define IO_RB4_LAT                  LATBbits.LATB4
@@ -88,7 +87,7 @@
 #define IO_RB4_SetOpenDrain()       do { ODCONBbits.ODCB4 = 1; } while(0)
 #define IO_RB4_SetAnalogMode()      do { ANSELBbits.ANSB4 = 1; } while(0)
 #define IO_RB4_SetDigitalMode()     do { ANSELBbits.ANSB4 = 0; } while(0)
-
+#define RB4_SetInterruptHandler  IO_RB4_SetInterruptHandler
 // get/set IO_RB6 aliases
 #define IO_RB6_TRIS                 TRISBbits.TRISB6
 #define IO_RB6_LAT                  LATBbits.LATB6
@@ -108,7 +107,6 @@
 #define IO_RB6_SetOpenDrain()       do { ODCONBbits.ODCB6 = 1; } while(0)
 #define IO_RB6_SetAnalogMode()      do { ANSELBbits.ANSB6 = 1; } while(0)
 #define IO_RB6_SetDigitalMode()     do { ANSELBbits.ANSB6 = 0; } while(0)
-
 // get/set IO_RC0 aliases
 #define IO_RC0_TRIS                 TRISCbits.TRISC0
 #define IO_RC0_LAT                  LATCbits.LATC0
@@ -128,7 +126,6 @@
 #define IO_RC0_SetOpenDrain()       do { ODCONCbits.ODCC0 = 1; } while(0)
 #define IO_RC0_SetAnalogMode()      do { ANSELCbits.ANSC0 = 1; } while(0)
 #define IO_RC0_SetDigitalMode()     do { ANSELCbits.ANSC0 = 0; } while(0)
-
 // get/set IO_RC1 aliases
 #define IO_RC1_TRIS                 TRISCbits.TRISC1
 #define IO_RC1_LAT                  LATCbits.LATC1
@@ -148,7 +145,6 @@
 #define IO_RC1_SetOpenDrain()       do { ODCONCbits.ODCC1 = 1; } while(0)
 #define IO_RC1_SetAnalogMode()      do { ANSELCbits.ANSC1 = 1; } while(0)
 #define IO_RC1_SetDigitalMode()     do { ANSELCbits.ANSC1 = 0; } while(0)
-
 // get/set IO_RC2 aliases
 #define Switch_TRIS                 TRISCbits.TRISC2
 #define Switch_LAT                  LATCbits.LATC2
@@ -168,7 +164,7 @@
 #define Switch_SetOpenDrain()       do { ODCONCbits.ODCC2 = 1; } while(0)
 #define Switch_SetAnalogMode()      do { ANSELCbits.ANSC2 = 1; } while(0)
 #define Switch_SetDigitalMode()     do { ANSELCbits.ANSC2 = 0; } while(0)
-
+#define RC2_SetInterruptHandler  Switch_SetInterruptHandler
 // get/set IO_RC3 aliases
 #define IO_RC3_TRIS                 TRISCbits.TRISC3
 #define IO_RC3_LAT                  LATCbits.LATC3
@@ -188,7 +184,6 @@
 #define IO_RC3_SetOpenDrain()       do { ODCONCbits.ODCC3 = 1; } while(0)
 #define IO_RC3_SetAnalogMode()      do { ANSELCbits.ANSC3 = 1; } while(0)
 #define IO_RC3_SetDigitalMode()     do { ANSELCbits.ANSC3 = 0; } while(0)
-
 // get/set IO_RC7 aliases
 #define EN_TRIS                 TRISCbits.TRISC7
 #define EN_LAT                  LATCbits.LATC7
@@ -208,7 +203,6 @@
 #define EN_SetOpenDrain()       do { ODCONCbits.ODCC7 = 1; } while(0)
 #define EN_SetAnalogMode()      do { ANSELCbits.ANSC7 = 1; } while(0)
 #define EN_SetDigitalMode()     do { ANSELCbits.ANSC7 = 0; } while(0)
-
 /**
  * @ingroup  pinsdriver
  * @brief GPIO and peripheral I/O initialization
@@ -227,83 +221,83 @@ void PIN_MANAGER_IOC(void);
 
 /**
  * @ingroup  pinsdriver
- * @brief Interrupt on Change Handler for the RB4 pin functionality
+ * @brief Interrupt on Change Handler for the IO_RB4 pin functionality
  * @param none
  * @return none
  */
-void RB4_ISR(void);
+void IO_RB4_ISR(void);
 
 /**
  * @ingroup  pinsdriver
- * @brief Interrupt Handler Setter for RB4 pin interrupt-on-change functionality.
- *        Allows selecting an interrupt handler for RB4 at application runtime.
+ * @brief Interrupt Handler Setter for IO_RB4 pin interrupt-on-change functionality.
+ *        Allows selecting an interrupt handler for IO_RB4 at application runtime.
  * @pre Pins intializer called
  * @param InterruptHandler function pointer.
  * @return none
  */
-void RB4_SetInterruptHandler(void (* InterruptHandler)(void));
+void IO_RB4_SetInterruptHandler(void (* InterruptHandler)(void));
 
 /**
  * @ingroup  pinsdriver
- * @brief Dynamic Interrupt Handler for RB4 pin.
- *        This is a dynamic interrupt handler to be used together with the RB4_SetInterruptHandler() method.
- *        This handler is called every time the RB4 ISR is executed and allows any function to be registered at runtime.
+ * @brief Dynamic Interrupt Handler for IO_RB4 pin.
+ *        This is a dynamic interrupt handler to be used together with the IO_RB4_SetInterruptHandler() method.
+ *        This handler is called every time the IO_RB4 ISR is executed and allows any function to be registered at runtime.
  * @pre Pins intializer called
  * @param none
  * @return none
  */
-extern void (*RB4_InterruptHandler)(void);
+extern void (*IO_RB4_InterruptHandler)(void);
 
 /**
  * @ingroup  pinsdriver
- * @brief Default Interrupt Handler for RB4 pin. 
- *        This is a predefined interrupt handler to be used together with the RB4_SetInterruptHandler() method.
- *        This handler is called every time the RB4 ISR is executed. 
+ * @brief Default Interrupt Handler for IO_RB4 pin. 
+ *        This is a predefined interrupt handler to be used together with the IO_RB4_SetInterruptHandler() method.
+ *        This handler is called every time the IO_RB4 ISR is executed. 
  * @pre Pins intializer called
  * @param none
  * @return none
  */
-void RB4_DefaultInterruptHandler(void);
+void IO_RB4_DefaultInterruptHandler(void);
 
 /**
  * @ingroup  pinsdriver
- * @brief Interrupt on Change Handler for the RC2 pin functionality
+ * @brief Interrupt on Change Handler for the Switch pin functionality
  * @param none
  * @return none
  */
-void RC2_ISR(void);
+void Switch_ISR(void);
 
 /**
  * @ingroup  pinsdriver
- * @brief Interrupt Handler Setter for RC2 pin interrupt-on-change functionality.
- *        Allows selecting an interrupt handler for RC2 at application runtime.
+ * @brief Interrupt Handler Setter for Switch pin interrupt-on-change functionality.
+ *        Allows selecting an interrupt handler for Switch at application runtime.
  * @pre Pins intializer called
  * @param InterruptHandler function pointer.
  * @return none
  */
-void RC2_SetInterruptHandler(void (* InterruptHandler)(void));
+void Switch_SetInterruptHandler(void (* InterruptHandler)(void));
 
 /**
  * @ingroup  pinsdriver
- * @brief Dynamic Interrupt Handler for RC2 pin.
- *        This is a dynamic interrupt handler to be used together with the RC2_SetInterruptHandler() method.
- *        This handler is called every time the RC2 ISR is executed and allows any function to be registered at runtime.
+ * @brief Dynamic Interrupt Handler for Switch pin.
+ *        This is a dynamic interrupt handler to be used together with the Switch_SetInterruptHandler() method.
+ *        This handler is called every time the Switch ISR is executed and allows any function to be registered at runtime.
  * @pre Pins intializer called
  * @param none
  * @return none
  */
-extern void (*RC2_InterruptHandler)(void);
+extern void (*Switch_InterruptHandler)(void);
 
 /**
  * @ingroup  pinsdriver
- * @brief Default Interrupt Handler for RC2 pin. 
- *        This is a predefined interrupt handler to be used together with the RC2_SetInterruptHandler() method.
- *        This handler is called every time the RC2 ISR is executed. 
+ * @brief Default Interrupt Handler for Switch pin. 
+ *        This is a predefined interrupt handler to be used together with the Switch_SetInterruptHandler() method.
+ *        This handler is called every time the Switch ISR is executed. 
  * @pre Pins intializer called
  * @param none
  * @return none
  */
-void RC2_DefaultInterruptHandler(void);
+void Switch_DefaultInterruptHandler(void);
 
 
 #endif // PINS_H

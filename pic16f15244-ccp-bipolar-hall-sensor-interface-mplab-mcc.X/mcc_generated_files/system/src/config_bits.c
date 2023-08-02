@@ -1,26 +1,17 @@
 /**
-  @Generated CCL Source File
-
-  @Company:
-    Microchip Technology Inc.
-
-  @File Name:
-    config_bits.c
-
-  @Summary:
-    This is the config_bits.c file generated using CCL
-
-  @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information : 
-        Driver Version    :  2.00
-    The generated drivers are tested against the following:
-        Compiler          :  XC8 v2.31
-        MPLAB             :  MPLAB X 5.45
+ * CONFIGURATION BITS Generated Driver Source File
+ * 
+ * @file config_bits.c
+ * 
+ * @ingroup config_bitsdriver
+ * 
+ * @brief This file contains the API Implementation for the Device Configuration Bits driver.
+ *
+ * @version Driver Version 2.0.1
 */
 
 /*
-© [2022] Microchip Technology Inc. and its subsidiaries.
+© [2023] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -54,7 +45,7 @@
 #pragma config WDTE = OFF     // WDT Operating Mode bits->WDT disabled; SEN is ignored
 #pragma config BOREN = ON     // Brown-out Reset Enable bits->Brown-out Reset Enabled, SBOREN bit is ignored
 #pragma config BORV = LO     // Brown-out Reset Voltage Selection bit->Brown-out Reset Voltage (VBOR) set to 1.9V
-#pragma config PPS1WAY = ON     // PPSLOCKED One-Way Set Enable bit->The PPSLOCKED bit can be cleared and set only once in software
+#pragma config PPS1WAY = ON     // PPSLOCKED One-Way Set Enable bit->The PPSLOCKED bit can be set once after an unlocking sequence is executed; once PPSLOCKED is set, all future changes to PPS registers are prevented
 #pragma config STVREN = ON     // Stack Overflow/Underflow Reset Enable bit->Stack Overflow or Underflow will cause a reset
 
 //CONFIG4
@@ -70,3 +61,6 @@
 //CONFIG5
 #pragma config CP = OFF     // User Program Flash Memory Code Protection bit->User Program Flash Memory code protection is disabled
 
+/**
+ End of File
+*/

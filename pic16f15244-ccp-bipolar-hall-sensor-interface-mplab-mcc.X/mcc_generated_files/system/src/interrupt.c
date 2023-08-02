@@ -5,13 +5,13 @@
  * 
  * @ingroup interrupt 
  * 
- * @brief This file contains the driver code for Interrupt Manager.
+ * @brief This file contains the API implementation for the Interrupt Manager driver.
  * 
- * @version Interrupt Manager Driver Version 2.03
+ * @version Interrupt Manager Driver Version 2.0.5
 */
 
 /*
-© [2022] Microchip Technology Inc. and its subsidiaries.
+© [2023] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -33,13 +33,16 @@
 
 #include "../../system/interrupt.h"
 #include "../../system/system.h"
+#include "../pins.h"
 
 void (*INT_InterruptHandler)(void);
 
 void  INTERRUPT_Initialize (void)
 {
     // Clear the interrupt flag
+    // Set the external interrupt edge detect
     EXT_INT_InterruptFlagClear();   
+    EXT_INT_risingEdgeSet();
     // Set Default Interrupt Handler
     INT_SetInterruptHandler(INT_DefaultInterruptHandler);
     // EXT_INT_InterruptEnable();
@@ -48,10 +51,10 @@ void  INTERRUPT_Initialize (void)
 
 /**
  * @ingroup interrupt
- * @brief This routine services the ISRs of enabled interrupts and is called everytime an interrupt is triggered.
+ * @brief Services the Interrupt Service Routines (ISR) of enabled interrupts and is called every time an interrupt is triggered.
  * @pre Interrupt Manager is initialized.
- * @param void
- * @return void
+ * @param None.
+ * @return None.
  */
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
@@ -62,17 +65,17 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     }
     else if(INTCONbits.PEIE == 1)
     {
-        if(PIE0bits.TMR0IE == 1 && PIR0bits.TMR0IF == 1)
+        if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
+        {
+            TMR1_OverflowISR();
+        } 
+        else if(PIE0bits.TMR0IE == 1 && PIR0bits.TMR0IF == 1)
         {
             Timer0_OverflowISR();
         } 
         else if(PIE1bits.CCP1IE == 1 && PIR1bits.CCP1IF == 1)
         {
             CCP1_CaptureISR();
-        } 
-        else if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
-        {
-            Timer1_OverflowISR();
         } 
         else
         {

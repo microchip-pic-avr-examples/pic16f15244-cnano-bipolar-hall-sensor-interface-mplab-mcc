@@ -1,4 +1,4 @@
-/*
+ /*
  * MAIN Generated Driver File
  * 
  * @file main.c
@@ -8,11 +8,11 @@
  * @brief This is the generated driver implementation file for the MAIN driver.
  *
  * @version MAIN Driver Version 1.0.0
-*/ 
+*/
 
 /*
-© [2021] Microchip Technology Inc. and its subsidiaries.
-        
+© [2023] Microchip Technology Inc. and its subsidiaries.
+
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
     You are responsible for complying with 3rd party license terms  
@@ -30,7 +30,6 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-            
 #include "mcc_generated_files/system/system.h"
 #include "application.h"
 

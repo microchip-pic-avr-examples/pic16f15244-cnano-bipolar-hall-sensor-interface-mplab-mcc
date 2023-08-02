@@ -32,17 +32,17 @@ A piece of magnet is sticked on the wheel and Bi Hall click is placed near it, i
 
 ## Software Used
 
-- MPLAB® X IDE [6.0.0 or newer](http://www.microchip.com/mplab/mplab-x-ide)
-- MPLAB® XC8 [2.36.0 or newer](http://www.microchip.com/mplab/compilers)
-- MPLAB® Code Configurator (MCC) [5.0.3 or newer](https://www.microchip.com/mplab/mplab-code-configurator)
-- Microchip PIC16F1xxxx Series Device Support [1.9.163 or newer](https://packs.download.microchip.com/) 
+- MPLAB® X IDE [6.10 or newer](http://www.microchip.com/mplab/mplab-x-ide)
+- MPLAB® XC8 [2.41 or newer](http://www.microchip.com/mplab/compilers)
+- MPLAB® Code Configurator (MCC) [5.3.7 or newer](https://www.microchip.com/mplab/mplab-code-configurator)
+- Microchip PIC16F1xxxx Series Device Support [1.18.352 or newer](https://packs.download.microchip.com/) 
 - Standalone Data Visualizer [2.20.674 or newer](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/atmel-data-visualizer)
-- MCC Melody Core 2.1.9
-- CCP MCC Melody driver 4.0.7
-- TMR0 MCC Melody driver 4.0.8
-- TMR1 MCC Melody driver 4.3.2
-- TMR2 MCC Melody driver 4.0.10
-- UART MCC Melody driver 1.6.0
+- MCC Melody Core 2.6.1
+- CCP MCC Melody driver 4.0.12
+- TMR0 MCC Melody driver 4.0.11
+- TMR1 MCC Melody driver 4.3.6
+- TMR2 MCC Melody driver 4.0.16
+- UART MCC Melody driver 1.8.0
 
 
 **Note:** 
