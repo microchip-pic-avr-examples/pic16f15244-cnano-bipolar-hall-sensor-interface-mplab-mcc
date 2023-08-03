@@ -35,7 +35,7 @@ A piece of magnet is sticked on the wheel and Bi Hall click is placed near it, i
 - MPLAB® X IDE [6.10 or newer](http://www.microchip.com/mplab/mplab-x-ide)
 - MPLAB® XC8 [2.41 or newer](http://www.microchip.com/mplab/compilers)
 - MPLAB® Code Configurator (MCC) [5.3.7 or newer](https://www.microchip.com/mplab/mplab-code-configurator)
-- Microchip PIC16F1xxxx Series Device Support [1.18.352 or newer](https://packs.download.microchip.com/) 
+- Microchip PIC16F1xxxx Series Device Support [1.19.363 or newer](https://packs.download.microchip.com/) 
 - Standalone Data Visualizer [2.20.674 or newer](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/atmel-data-visualizer)
 - MCC Melody Core 2.6.1
 - CCP MCC Melody driver 4.0.12

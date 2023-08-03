@@ -342,7 +342,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC16F1xxxx_DFP" vendor="Microchip" version="1.18.352"/>
+        <pack name="PIC16F1xxxx_DFP" vendor="Microchip" version="1.19.363"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
