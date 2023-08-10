@@ -10,12 +10,12 @@
         "shortDescription": "This code example demonstrates how to interface a bipolar hall sensor to PIC microcontroller through built-in CCP peripheral. Compatible PIC16F152xx family of MCUs are PIC16F15214, PIC16F15223, PIC16F15254, PIC16F15276.",
         "ide": {
             "name": "MPLAB X",
-            "semverRange": ">=6.0.0"
+            "semverRange": ">=6.10.0"
         },
         "compiler": [
             {
                 "name": "XC8",
-                "semverRange": "^2.36.0"
+                "semverRange": "^2.41.0"
             }
         ],
         "dfp": {

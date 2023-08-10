@@ -48,15 +48,16 @@ A piece of magnet is stuck on the wheel and the BI HALL click is placed near it,
 **Notes:** 
 
  **1.** The integrated MPLAB Data visualizer can also be used as a terminal window.
+
  **2.** For running this demo, the installed tool version should be same or later. This example is not tested with the previous versions.
 
 
 ## Hardware Used
 
-- Curiosity Nano Base for Click boards(AC164162)(https://www.microchip.com/en-us/development-tool/AC164162)
-- PIC16F15244 Curiosity Nano Evaluation Kit (EV09Z19A)(https://www.microchip.com/en-us/development-tool/EV09Z19A)
-- DC Motor 8 Click [MIKROE-2893](https://www.mikroe.com/dc-motor-8-click) 
-- BI HALL Click [MIKROE-1646](https://www.mikroe.com/bi-hall-click)
+- Curiosity Nano Base for Click boards([AC164162])(https://www.microchip.com/en-us/development-tool/AC164162)
+- PIC16F15244 Curiosity Nano Evaluation Kit ([EV09Z19A])(https://www.microchip.com/en-us/development-tool/EV09Z19A)
+- DC Motor 8 Click ([MIKROE-2893])(https://www.mikroe.com/dc-motor-8-click) 
+- BI HALL Click ([MIKROE-1646])(https://www.mikroe.com/bi-hall-click)
 
 ## Hardware setup 
 
