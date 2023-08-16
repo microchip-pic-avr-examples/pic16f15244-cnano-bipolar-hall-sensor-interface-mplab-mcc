@@ -42,7 +42,10 @@ int main(void)
     SYSTEM_Initialize();
     Timer0_Stop();
     
+    __delay_ms(100);
     printf("System Initialization\n");
+    
+     
     // Enable the Global Interrupts
     INTERRUPT_GlobalInterruptEnable();
 
