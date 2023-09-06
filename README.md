@@ -32,10 +32,10 @@ A piece of magnet is stuck on the wheel and the BI HALL click is placed near it,
 
 ## Software Used
 
-- MPLAB® X IDE [6.10 or newer](http://www.microchip.com/mplab/mplab-x-ide)
-- MPLAB XC8 [2.41 or newer](http://www.microchip.com/mplab/compilers)
+- MPLAB® X IDE [6.15 or newer](http://www.microchip.com/mplab/mplab-x-ide)
+- MPLAB XC8 [2.45 or newer](http://www.microchip.com/mplab/compilers)
 - MPLAB Code Configurator (MCC) [5.3.7 or newer](https://www.microchip.com/mplab/mplab-code-configurator)
-- Microchip PIC16F1xxxx Series Device Support [1.19.363 or newer](https://packs.download.microchip.com/) 
+- Microchip PIC16F1xxxx Series Device Support [1.20.366 or newer](https://packs.download.microchip.com/) 
 - Standalone Data Visualizer [2.20.674 or newer](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/atmel-data-visualizer)
 - MCC Melody Core 2.6.1
 - Capture Compare and PWM (CCP) MCC Melody driver 4.0.12
